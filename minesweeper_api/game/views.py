@@ -2,13 +2,22 @@ from rest_framework import serializers, viewsets, status
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from django.shortcuts import get_object_or_404
+from django.views.generic import TemplateView
 from game.models import Game
 from game.serializers import GameSerializer, GameCreateSerializer
+
+
+class GamePortalView(TemplateView):
+    template_name = "game/game.html"
 
 
 class GameViewSet(viewsets.ModelViewSet):
     queryset = Game.objects.all()
     serializer_class = GameSerializer
+
+    def get_queryset(self):
+        user = self.request.user
+        return Game.objects.filter(user=user)
 
     def create(self, request):
         user = self.request.user

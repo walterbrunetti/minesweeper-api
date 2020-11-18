@@ -3,9 +3,15 @@ from game.models import Game
 
 
 class GameSerializer(serializers.ModelSerializer):
+    start_date = serializers.DateTimeField(format='%m/%d/%Y %H:%M:%S')
+    status_description = serializers.SerializerMethodField()
+
+    def get_status_description(self, obj):
+        return obj.get_status_display()
+
     class Meta:
         model = Game
-        fields = ['id', 'start_date', 'end_date', 'status', 'user', 'board']
+        fields = ['id', 'start_date', 'status', 'user', 'time_elapsed', 'status_description', 'board']
 
 
 class GameCreateSerializer(serializers.Serializer):

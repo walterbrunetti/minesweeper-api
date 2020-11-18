@@ -63,7 +63,7 @@ def add_1_to_cells(cells, board):
 
 
 def start_new_board(number_of_mines, rows, columns, starting_row, starting_column):
-    board = [[{'value': VALUE_BLANK, 'status': STATUS_COVERED} for row in range(rows)] for column in range(columns)]
+    board = [[{'value': VALUE_BLANK, 'status': STATUS_COVERED} for column in range(columns)] for row in range(rows)]
 
     # TODO: check number_of_mines fit in array
 

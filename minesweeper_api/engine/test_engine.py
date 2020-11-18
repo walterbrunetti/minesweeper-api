@@ -1,5 +1,5 @@
 import unittest
-from engine.engine import place_mines, get_adjacent_cells_coordinates, uncover_cell, flag_cell, winning, \
+from engine.engine import place_mines, get_adjacent_cells_coordinates, uncover_cell, flag_cell, winning, start_new_board, \
     VALUE_BLANK, VALUE_MINE, STATUS_COVERED, STATUS_UNCOVERED, STATUS_FLAGGED ,MineExplodedException
 
 
@@ -113,3 +113,14 @@ class EngineTestCase(unittest.TestCase):
             [{'value': VALUE_MINE, 'status': STATUS_FLAGGED}, {'value': VALUE_BLANK, 'status': STATUS_UNCOVERED}]
         ]
         self.assertTrue(winning(board))
+
+    def test_start_new_board_creates_board_with_given_rows_columns_and_mines(self):
+        number_of_mines = 5
+        rows = 5
+        columns = 10
+        starting_row = 0
+        starting_column = 2
+        board = start_new_board(number_of_mines, rows, columns, starting_row, starting_column)
+
+        self.assertEqual(len(board), rows)
+        self.assertEqual(len(board[0]), columns)
