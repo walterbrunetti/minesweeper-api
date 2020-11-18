@@ -15,6 +15,7 @@
 ```python engine/minesweeper_engine_terminal_based.py```
 
 ### Run web-based version
+* python manage.py createsuperuser  # or use given credentials
 * python manage.py runserver
 * Go to game home page http://127.0.0.1:8000/home and follow instructions there
 
