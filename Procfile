@@ -1,1 +1,1 @@
-web: gunicorn minesweeper_api.minesweeper_api.wsgi
+web: gunicorn --pythonpath minesweeper_api minesweeper_api.minesweeper_api.wsgi
