@@ -19,6 +19,9 @@
 * python manage.py runserver
 * Go to game home page http://127.0.0.1:8000/home and follow instructions there
 
+### Live demo
+https://minesweeper-walter-deviget.herokuapp.com/home
+
 
 ### How the game engine works
 * Create a new board with given number of rows, number of columns and number of mines
