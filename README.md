@@ -19,6 +19,14 @@
 * python manage.py runserver
 * Go to game home page http://127.0.0.1:8000/home and follow instructions there
 
+### Setup Heroku
+* create a new django project in dashboard
+* heroku git:remote -a minesweeper-walter-deviget
+* heroku config:set DISABLE_COLLECTSTATIC=1  # or set it to run collectstatic
+* heroku ps:scale web=1
+* git push heroku main
+* heroku logs --tail
+
 ### Live demo
 https://minesweeper-walter-deviget.herokuapp.com/home
 
