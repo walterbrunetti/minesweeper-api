@@ -1,5 +1,7 @@
 # minesweeper-api
 
+REST-API for the game Minesweeper. It includes a basic web interface and a terminal-version to interact with APIs.
+
 ### Local setup:
 
 * python3 -m venv minesweeper-api
